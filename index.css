@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ADD8E6;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    background: #1a1a1a;
+    color: white;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e74c3c; /* Professional Red Accent */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e74c3c;
+}
+
+
+
+
+
+
+
+
+
+
+/* Hero Carousel Styles */
+
+.hero-container {
+    position: relative;
+    height: 60vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    top: 70px;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Dark overlay for text readability */
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    bottom: 50px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 50px; /* Responsive font size */
+    margin-bottom: 2rem;
+}
+
+/* Carousel Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 20;
+    transition: 0.3s;
+    border-radius: 50%;
+    margin: 0px 10px;
+}
+
+.prev:hover, .next:hover {
+    background: #e74c3c;
+}
+
+.next { right: 0; }
+.prev { left: 0; }
+
+@media (max-width: 768px) {
+    .hero-container { height: 50vh; }
+    .prev, .next { padding: 10px; font-size: 1rem; }
+}
+
+/* Mobile Responsive Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide for now, JS will toggle */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #1a1a1a;
+        text-align: center;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { padding: 15px 0; }
+    .hamburger { display: block; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Brands Section Styling */
+.brands-section {
+    padding: 60px 5%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Red line under the title for a professional look */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e74c3c;
+    margin: 10px auto 0;
+}
+
+.brand-grid {
+    display: grid;
+    /* This line is "magic": it creates as many columns as fit, 
+       with a minimum width of 150px per logo */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+.brand-item {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect to make it interactive */
+.brand-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.brand-item img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.brand-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 logos per row on very small screens */
+        gap: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styles */
+.main-footer {
+    background: #1a1a1a;
+    color: #bbb;
+    padding: 60px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3 {
+    color: white;
+    margin-bottom: 25px;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+/* Red line under footer headings */
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #e74c3c;
+    margin-top: 10px;
+}
+
+.footer-col p {
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-col ul li a:hover {
+    color: #e74c3c;
+    padding-left: 5px;
+}
+
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* One column on phones */
+        text-align: center;
+    }
+    .footer-col h3::after {
+        margin: 10px auto 0;
+    }
+}

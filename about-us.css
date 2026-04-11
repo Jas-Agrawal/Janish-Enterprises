@@ -1,0 +1,194 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About Page Specific Styles */
+.page-header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.about-content {
+    padding: 60px 5%;
+    background: white;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 0px #e74c3c; /* Stylized border shadow */
+}
+
+/* Stats Section */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 5%;
+    background: #f9f9f9;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-box {
+    background: white;
+    padding: 30px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.stat-box i {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.stat-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    color: #777;
+}
+
+/* Mobile responsive for About Page */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styles */
+.main-footer {
+    background: #1a1a1a;
+    color: #bbb;
+    padding: 60px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3 {
+    color: white;
+    margin-bottom: 25px;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+/* Red line under footer headings */
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #e74c3c;
+    margin-top: 10px;
+}
+
+.footer-col p {
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-col ul li a:hover {
+    color: #e74c3c;
+    padding-left: 5px;
+}
+
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* One column on phones */
+        text-align: center;
+    }
+    .footer-col h3::after {
+        margin: 10px auto 0;
+    }
+}
